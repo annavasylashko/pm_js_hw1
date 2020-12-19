@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+<head>
+    <style>
+        html {
+            background-color: rgb(230, 225, 233);
+        }
+        h1 {
+            width: fit-content;
+            color: white;
+            border-radius: 20px;
+            background: linear-gradient(40deg, rgba(60,33,183,1) 0%, rgba(139,99,218,1) 36%, rgba(203,152,237,1) 65%, rgba(207,203,210,1) 100%);
+            padding: 50px;
+            margin: auto;
+            text-align: center;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+    <title>HomeworkJS</title>
+</head>
+<body>
+    <h1>Now you know what month it is</h1>
+        
+    <script type="text/javascript">
+        
+    const input = prompt('Enter the month'); 
+
+    const months = [
+        'january',
+        'february',
+        'march',
+        'april',
+        'may',
+        'june',
+        'july',
+        'august',
+        'september',
+        'october',
+        'november',
+        'december'
+    ];
+
+    function getMonthFrom(input) {
+        if (input >= 1 && input <= 12) {
+            return months[input - 1]
+        } else {
+            const index = months.findIndex((element) => String(input.trim().toLowerCase()) == element)
+            if (index) { return index + 1 }
+
+            return 0
+        }
+    }
+
+    const output = getMonthFrom(input)
+
+    alert(output == 0 ? 'You have entered wrong data' : `${input} <-> ${output}`)
+
+    </script>
+</body>
+</html>
